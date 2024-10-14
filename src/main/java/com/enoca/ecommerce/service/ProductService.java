@@ -30,7 +30,7 @@ public class ProductService {
 
         validateStock(productDto);
 
-        Product product = repository.save(ProductDto.toEntity(productDto));
+        Product product = repository.save(ProductDto.toEntityForCreate(productDto));
         return ProductDto.of(product);
     }
 

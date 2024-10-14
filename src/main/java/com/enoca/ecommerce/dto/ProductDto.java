@@ -31,6 +31,8 @@ public record ProductDto(
         );
     }
 
+
+
     static public List<ProductDto> of(List<Product> products) {
         return products.stream().map(ProductDto::of).toList();
     }
@@ -45,7 +47,19 @@ public record ProductDto(
                 .build();
     }
 
+    static public Product toEntityForCreate(ProductDto productDto) {
+        return Product.builder()
+                .name(productDto.name())
+                .description(productDto.description())
+                .price(BigDecimal.valueOf(productDto.price()))
+                .stock(productDto.stock())
+                .build();
+    }
+
+
     static public List<Product> toEntities(List<ProductDto> productDtos) {
         return productDtos.stream().map(ProductDto::toEntity).toList();
     }
+
+
 }

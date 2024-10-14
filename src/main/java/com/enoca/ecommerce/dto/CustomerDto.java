@@ -36,4 +36,12 @@ public record CustomerDto(
                 .deleted(false)
                 .build();
     }
+
+    static public Customer toEntityForCreate(CustomerDto customerDto) {
+        return Customer.builder()
+                .name(customerDto.name())
+                .email(customerDto.email())
+                .deleted(false)
+                .build();
+    }
 }

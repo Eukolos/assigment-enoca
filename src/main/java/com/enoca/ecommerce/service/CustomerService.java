@@ -34,7 +34,7 @@ public class CustomerService {
     }
 
     public CustomerDto createCustomer(CustomerDto customerDto) {
-        Customer customer = repository.save(CustomerDto.toEntity(customerDto));
+        Customer customer = repository.save(CustomerDto.toEntityForCreate(customerDto));
         cartService.createCartForCustomer(customer);
         return CustomerDto.of(customer);
     }
