@@ -1,0 +1,27 @@
+spring:
+    application:
+        name: ecommerce
+    profiles:
+        active: prod
+    jpa:
+        hibernate:
+            ddl-auto: update
+        show-sql: true
+        open-in-view: false
+
+management:
+    endpoints:
+        web:
+            exposure:
+                include: "*"
+    endpoint:
+        health:
+            show-details: always
+        metrics:
+            enabled: true
+        info:
+            enabled: true
+server:
+    port: 8080
+    servlet:
+        context-path: /api/v1

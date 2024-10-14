@@ -1,0 +1,39 @@
+version: "3.9"
+
+services:
+#  ecommerce:
+#    image: eukolos/ecommerce:latest
+#
+#    networks:
+#      - ecommerce-network
+#    ports:
+#      - "8080:8080"
+#    depends_on:
+#      - postgres
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: ecommerce
+      POSTGRES_USER: ecommerce
+      POSTGRES_PASSWORD: ecommerce
+      POSTGRES_HOST_AUTH_METHOD: trust
+    networks:
+      - ecommerce-network
+    ports:
+      - "5432:5432"
+  pg-admin:
+    image: dpage/pgadmin4:latest
+    container_name: pg-admin
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@admin.com
+      - PGADMIN_DEFAULT_PASSWORD=admin
+      - PGADMIN_LISTEN_PORT=5050
+    networks:
+      - ecommerce-network
+    ports:
+      - "5050:5050"
+    depends_on:
+      - postgres
+networks:
+  ecommerce-network:
+    driver: bridge

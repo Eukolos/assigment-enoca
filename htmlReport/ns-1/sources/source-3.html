@@ -1,0 +1,148 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1254"> 
+  <title>Coverage Report > OrderController</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.enoca.ecommerce.controller</a>
+</div>
+
+<h1>Coverage Summary for Class: OrderController (com.enoca.ecommerce.controller)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">OrderController</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    60%
+  </span>
+  <span class="absValue">
+    (3/5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    60%
+  </span>
+  <span class="absValue">
+    (3/5)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.enoca.ecommerce.controller;
+&nbsp;
+&nbsp;import com.enoca.ecommerce.dto.OrderDto;
+&nbsp;import com.enoca.ecommerce.service.OrderService;
+&nbsp;import lombok.RequiredArgsConstructor;
+&nbsp;import org.springframework.http.HttpStatus;
+&nbsp;import org.springframework.web.bind.annotation.*;
+&nbsp;
+&nbsp;import java.util.List;
+&nbsp;
+&nbsp;@RestController
+&nbsp;@RequiredArgsConstructor
+&nbsp;@RequestMapping(&quot;/orders&quot;)
+&nbsp;public class OrderController {
+&nbsp;    private final OrderService service;
+&nbsp;
+&nbsp;    @PostMapping(&quot;/placeOrder/{cartId}&quot;)
+&nbsp;    @ResponseStatus(HttpStatus.CREATED)
+&nbsp;    public OrderDto placeOrder(@PathVariable Long cartId) {
+<b class="fc">&nbsp;        return service.placeOrder(cartId);</b>
+&nbsp;    }
+&nbsp;    @GetMapping
+&nbsp;    public List&lt;OrderDto&gt; getOrders() {
+<b class="fc">&nbsp;        return service.getOrders();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @GetMapping(&quot;/{id}&quot;)
+&nbsp;    public OrderDto getOrder(Long id) {
+<b class="nc">&nbsp;        return service.getOrder(id);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @GetMapping(&quot;/orderCode/{orderCode}&quot;)
+&nbsp;    public OrderDto getOrderByOrderCode( @PathVariable String orderCode) {
+<b class="fc">&nbsp;        return service.getOrderByOrderCode(orderCode);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @GetMapping(&quot;/customer/{customerId}&quot;)
+&nbsp;    public List&lt;OrderDto&gt; getOrdersByCustomerId(@PathVariable Long customerId) {
+<b class="nc">&nbsp;        return service.getOrdersByCustomerId(customerId);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;
+&nbsp;}
+&nbsp;
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-10-14 14:07</div>
+</div>
+</body>
+</html>

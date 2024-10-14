@@ -1,0 +1,166 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1254"> 
+  <title>Coverage Report > CartController</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.enoca.ecommerce.controller</a>
+</div>
+
+<h1>Coverage Summary for Class: CartController (com.enoca.ecommerce.controller)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">CartController</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    12,5%
+  </span>
+  <span class="absValue">
+    (1/8)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    12,5%
+  </span>
+  <span class="absValue">
+    (1/8)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.enoca.ecommerce.controller;
+&nbsp;
+&nbsp;import com.enoca.ecommerce.dto.AddProductRequest;
+&nbsp;import com.enoca.ecommerce.dto.CartCustomerDto;
+&nbsp;import com.enoca.ecommerce.dto.CartDto;
+&nbsp;import com.enoca.ecommerce.dto.UpdateCartRequest;
+&nbsp;import com.enoca.ecommerce.service.CartService;
+&nbsp;import lombok.RequiredArgsConstructor;
+&nbsp;import org.springframework.web.bind.annotation.*;
+&nbsp;
+&nbsp;import java.util.List;
+&nbsp;
+&nbsp;@RestController
+&nbsp;@RequiredArgsConstructor
+&nbsp;@RequestMapping(&quot;/carts&quot;)
+&nbsp;public class CartController {
+&nbsp;    private final CartService service;
+&nbsp;
+&nbsp;    //swagger config
+&nbsp;     @GetMapping(&quot;/{id}&quot;)
+&nbsp;    public CartDto getCart(@PathVariable Long id) {
+<b class="nc">&nbsp;        return service.getCartDto(id);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @GetMapping
+&nbsp;    public List&lt;CartDto&gt; getCarts() {
+<b class="nc">&nbsp;        return service.getCarts();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @GetMapping(&quot;/customer/{id}&quot;)
+&nbsp;    public CartCustomerDto getCartWithCustomer(@PathVariable Long id) {
+<b class="nc">&nbsp;        return service.getCartWithCustomer(id);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @GetMapping(&quot;/customer&quot;)
+&nbsp;    public List&lt;CartCustomerDto&gt; getCartsWithCustomer() {
+<b class="nc">&nbsp;        return service.getCartsWithCustomer();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @PostMapping(&quot;/addProduct&quot;)
+&nbsp;    public void addProductToCart(@RequestBody AddProductRequest request) {
+<b class="fc">&nbsp;        service.addProductToCart(request);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @PutMapping(&quot;{id}&quot;)
+&nbsp;    public void updateCart(@PathVariable Long id, @RequestBody List&lt;UpdateCartRequest&gt; request) {
+<b class="nc">&nbsp;        service.updateCart(request, id);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @DeleteMapping(&quot;/empty/{id}&quot;)
+&nbsp;    public void emptyCart(@PathVariable Long id) {
+<b class="nc">&nbsp;        service.emptyCart(id);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @DeleteMapping(&quot;/product/{id}&quot;)
+&nbsp;    public void removeProductFromCart(@PathVariable Long id) {
+<b class="nc">&nbsp;        service.removeProductFromCart(id);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-10-14 14:07</div>
+</div>
+</body>
+</html>
