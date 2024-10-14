@@ -7,9 +7,6 @@ public record AddProductRequest (
         @NotNull
         Long productId,
         @Min(1)
-        Integer quantity,
-        @NotNull
-        Long cartId
-
+        Integer quantity
 ){
 }

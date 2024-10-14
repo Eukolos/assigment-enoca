@@ -56,8 +56,8 @@ public class CartService {
     }
 
     // update cart
-    public void addProductToCart(AddProductRequest request) {
-        Cart cart = repository.findById(request.cartId()).orElseThrow(() -> new EntityNotFoundException("Cart not found with id: " + request.cartId()));
+    public void addProductToCart(AddProductRequest request, Long cartId) {
+        Cart cart = repository.findById(cartId).orElseThrow(() -> new EntityNotFoundException("Cart not found with id: " + cartId));
         if (cart.getProducts().stream().anyMatch(productHolder -> productHolder.getProduct().getId().equals(request.productId()))) {
             ProductHolder productHolder = cart.getProducts().stream().filter(productHolder1 -> productHolder1.getProduct().getId().equals(request.productId())).findFirst().get();
             BigDecimal newTotal = cart.getTotalPrice().add(productHolder.getProduct().getPrice().multiply(BigDecimal.valueOf(request.quantity())));

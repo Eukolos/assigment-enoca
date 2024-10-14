@@ -2,12 +2,18 @@
 
 <img src="image/photo.png" alt="feature"/>
 
-[##**Answer of Assigment Questions**##](https://github.com/Eukolos/assignment-enoca/blob/main/ANSWER.md)
+[##**Answers of Assigment Questions**##](https://github.com/Eukolos/assignment-enoca/blob/main/ANSWER.md)
 
 # Uygulamayı bu [LINK](http://18.184.3.87:8080/api/v1/swagger-ui/index.html) üzerinden online test edebilirsiniz.
+### You can test the application online with this [LINK](http://18.184.3.87:8080/api/v1/swagger-ui/index.html) with Swagger UI
+
+## Uygulamanın databaseini [LINK](http://18.184.3.87:5050) üzerinden görebilirsiniz. 
+### You can see the database of the application on this [LINK](http://18.184.3.87:5050) with PG Admin 4
+  - Username: admin@admin.com
+  - Password: admin
 
 ## Table of Contents
-- 
+
 - [Dependencies Used](#dependencies-used)
 - [Run the App](#🔨-run-the-app)
 - [Answer of Assigment Questions](https://github.com/Eukolos/assignment-enoca/blob/main/ANSWER.md)
@@ -78,6 +84,8 @@ The project is thoroughly tested to ensure code quality and reliability.
 
 Integration tests have been implemented using [JUnit](https://junit.org/) with [TestContainers](https://www.testcontainers.org/) for the database and [Rest Assured](https://rest-assured.io/) for API endpoints. The integration test files are located in the `src/test/java` directory.
 
+<img src="image/tests.jpg" alt="feature"/>
+
 ### Test Coverage
 
 [**All my tests and coverage percent in here**](https://raw.githack.com/Eukolos/assignment-enoca/main/htmlReport/index.html)
@@ -146,6 +154,5 @@ test
 ## Contact
 
 This project was created by [Eukolos](https://github.com/Eukolos). Contributions are welcome!
-
-If you have any questions or suggestions, feel free to contact the project maintainer at eminaksoy35@gmail.com.
+ ct maintainer at eminaksoy35@gmail.com.
 

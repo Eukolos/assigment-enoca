@@ -17,7 +17,7 @@ public class CartController {
     private final CartService service;
 
     //swagger config
-     @GetMapping("/{id}")
+    @GetMapping("/{id}")
     public CartDto getCart(@PathVariable Long id) {
         return service.getCartDto(id);
     }
@@ -37,9 +37,9 @@ public class CartController {
         return service.getCartsWithCustomer();
     }
 
-    @PostMapping("/addProduct")
-    public void addProductToCart(@RequestBody AddProductRequest request) {
-        service.addProductToCart(request);
+    @PostMapping("/{id}/product")
+    public void addProductToCart(@PathVariable Long id, @RequestBody AddProductRequest request) {
+        service.addProductToCart(request, id);
     }
 
     @PutMapping("{id}")
@@ -47,16 +47,15 @@ public class CartController {
         service.updateCart(request, id);
     }
 
-    @DeleteMapping("/empty/{id}")
+    @DeleteMapping("/{id}")
     public void emptyCart(@PathVariable Long id) {
         service.emptyCart(id);
     }
 
-    @DeleteMapping("/product/{id}")
+    @DeleteMapping("/{id}/product")
     public void removeProductFromCart(@PathVariable Long id) {
         service.removeProductFromCart(id);
     }
-
 
 
 }
