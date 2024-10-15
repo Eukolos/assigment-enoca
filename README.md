@@ -1,16 +1,28 @@
-# Ecommerce API - Enoca Assigment
+# <img src="image/photo.png" width="180" alt="feature"  /> Assignment  -  Ecommerce API
 
-<img src="image/photo.png" alt="feature"/>
 
-[##**Answers of Assigment Questions**##](https://github.com/Eukolos/assignment-enoca/blob/main/ANSWER.md)
+## **Assignment Sorularının Cevapları**
 
-# Uygulamayı bu [LINK](http://18.184.3.87:8080/api/v1/swagger-ui/index.html) üzerinden online test edebilirsiniz.
-### You can test the application online with this [LINK](http://18.184.3.87:8080/api/v1/swagger-ui/index.html) with Swagger UI
+Assignment sorularına verilen ayrıntılı cevaplara [Assignment Cevapları](https://github.com/Eukolos/assignment-enoca/blob/main/ANSWER.md) dosyasından ulaşabilirsiniz.
 
-## Uygulamanın databaseini [LINK](http://18.184.3.87:5050) üzerinden görebilirsiniz. 
-### You can see the database of the application on this [LINK](http://18.184.3.87:5050) with PG Admin 4
-  - Username: admin@admin.com
-  - Password: admin
+---
+
+## **Uygulamayı Online Olarak Test Edin**
+
+Swagger UI üzerinden uygulamayı online olarak aşağıdaki bağlantıdan test edebilirsiniz:  
+🔗 [API'yi Test Et](http://18.184.3.87:8080/api/v1/swagger-ui/index.html)
+
+---
+
+## **Veritabanına Erişim**
+
+Uygulamanın veritabanını PG Admin 4 ile aşağıdaki bağlantıdan görüntüleyebilirsiniz:  
+🔗 [Veritabanını Görüntüle](http://18.184.3.87:5050)  
+- **Kullanıcı Adı:** admin@admin.com  
+- **Şifre:** admin
+
+---
+
 
 ## Table of Contents
 
