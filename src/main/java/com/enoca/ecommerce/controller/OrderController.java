@@ -1,5 +1,6 @@
 package com.enoca.ecommerce.controller;
 
+import com.enoca.ecommerce.aop.InMemoryLogger;
 import com.enoca.ecommerce.dto.OrderDto;
 import com.enoca.ecommerce.service.OrderService;
 import lombok.RequiredArgsConstructor;
@@ -13,30 +14,41 @@ import java.util.List;
 @RequestMapping("/orders")
 public class OrderController {
     private final OrderService service;
+    private final InMemoryLogger log;
 
     @PostMapping("/placeOrder/{cartId}")
     @ResponseStatus(HttpStatus.CREATED)
     public OrderDto placeOrder(@PathVariable Long cartId) {
-        return service.placeOrder(cartId);
+        OrderDto orderDto = service.placeOrder(cartId);
+        log.log("OrderController -> placeOrder -> orderDto: " + orderDto);
+        return orderDto;
     }
     @GetMapping
     public List<OrderDto> getOrders() {
-        return service.getOrders();
+        List<OrderDto> orders = service.getOrders();
+        log.log("OrderController -> getOrders -> orders: " + orders);
+        return orders;
     }
 
     @GetMapping("/{id}")
     public OrderDto getOrder(Long id) {
-        return service.getOrder(id);
+        OrderDto order = service.getOrder(id);
+        log.log("OrderController -> getOrder -> order: " + order);
+        return order;
     }
 
     @GetMapping("/orderCode/{orderCode}")
     public OrderDto getOrderByOrderCode( @PathVariable String orderCode) {
-        return service.getOrderByOrderCode(orderCode);
+        OrderDto orderByOrderCode = service.getOrderByOrderCode(orderCode);
+        log.log("OrderController -> getOrderByOrderCode -> orderByOrderCode: " + orderByOrderCode);
+        return orderByOrderCode;
     }
 
     @GetMapping("/customer/{customerId}")
     public List<OrderDto> getOrdersByCustomerId(@PathVariable Long customerId) {
-        return service.getOrdersByCustomerId(customerId);
+        List<OrderDto> ordersByCustomerId = service.getOrdersByCustomerId(customerId);
+        log.log("OrderController -> getOrdersByCustomerId -> ordersByCustomerId: " + ordersByCustomerId);
+        return ordersByCustomerId;
     }
 
 
